@@ -10,8 +10,8 @@ import user.model.vo.User;
 public class UserDAO {
 
 	public int insertUser(Connection conn, User user) {
+		PreparedStatement pstmt = null;
 	    String query = "INSERT INTO USER_TBL VALUES(?,?,?,?,?,?,?)";
-	    PreparedStatement pstmt = null;
 	    int result = 0;
 	    try {
 	        pstmt = conn.prepareStatement(query);

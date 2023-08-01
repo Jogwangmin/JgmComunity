@@ -3,17 +3,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta charset="UTF-8">
-	<title>login</title>
+ 	<title>mypage</title>
         <link rel="stylesheet" href="../resources/css/topFoot.css">
-        <link rel="stylesheet" href="../resources/css/login.css">
+        <link rel="stylesheet" href="../resources/css/mypage.css">
     </head>     
     <body>
         <div id="container">
             <header id="header">
                 <div id="header-1"></div>
                 <div id="header-2"><a href="../index.jsp"><img src="../resources/images/logo.PNG" alt="" id="top-logo"></a></div>
-                <div id="header-3"><a href="login.jsp"><input type="button" value="로그인" id="toplog-btn"></a></div>
+                <div id="header-3"><a href="login.do"><input type="button" value="로그인" id="toplog-btn"></a></div>
             </header>
             <div id="nav">
                 <ul id="top-ul">
@@ -24,24 +23,21 @@
                 </ul>
             </div>
             <main id="main">
-                <div class="login-form">
-	               	<form action="../index.jsp" method="post">
-		       		 	<div id="log-top">
-			                <label for="" id="userName">아이디</label>
-			                <input type="text" id="id-input" required>
-			                <label for="" id="userPw">비밀번호</label>
-			                <input type="password" id="pw-input" required>
-		               	</div>
-		               	<div id="log-bottom">
-			                <input type="submit" value="로그인" id="log-btn" >
-		           	 	</div>
-		           	 	<div class="sign">
-			                <a href="sign.jsp" id="sign">회원가입</a>
-			                <a href="findIdPw.jsp" id="pwfind">ID/PW찾기</a>
-		               	</div>
-	                </form>
+                <div id="profile">
+                    <div id="follower-count"><p>팔로워 : <strong>100명</strong> 팔로잉 : <strong>3명</strong></p></div>
+                    <div id="profile-info">
+                        <img src="../resources/images/user.png" alt="프로필 사진" id="profile-picture">
+                        <div id="profile-name">홍길동</div>
+                    </div>
+                    <div id="profile-option">
+                        <ul id="option">
+                            <li><a href="updateInfo.jsp">정보수정</a></li>
+                            <li><a href="posts.jsp">내가 쓴 글</a></li>
+                            <li><a href="follow.jsp">즐겨찾기</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </main>
+                </main>
             <footer>
                 <div id="footer">
                     <div id="footer-left">

@@ -30,6 +30,7 @@ public class EnrollController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.getRequestDispatcher("/WEB-INF/views/user/sign.jsp").forward(request, response);
 	}
 
 	/**
@@ -43,19 +44,19 @@ public class EnrollController extends HttpServlet {
 		int userAge = Integer.parseInt(request.getParameter("user-age"));
 		String userEmail = request.getParameter("user-email");
 		String userPhone = request.getParameter("user-phone");
-		String userAddr = request.getParameter("user-address");
-		User user = new User(userId, userPw, userName, userAge, userEmail, userPhone, userAddr);
+		String userAddress = request.getParameter("user-address");
+		User user = new User(userId, userPw, userName, userAge, userEmail, userPhone, userAddress);
 		UserService service = new UserService();
 		int result = service.insertUser(user);
 		if(result > 0) {
 			// 성공
 			request.setAttribute("msg", "회원가입 성공했어요.");
-			request.setAttribute("url", "/user/login.jsp");
-			request.getRequestDispatcher("/user/serviceSuccess.jsp")
+			request.setAttribute("url", "login.do");
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp")
 			.forward(request, response);
 		}else {
 			// 실패
-			request.getRequestDispatcher("/user/serviceFailed.jsp")
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp")
 			.forward(request, response);
 		}
 	}

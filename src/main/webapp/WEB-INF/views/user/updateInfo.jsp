@@ -13,7 +13,7 @@
             <header id="header">
                 <div id="header-1"></div>
                 <div id="header-2"><a href="../index.jsp"><img src="../resources/images/logo.PNG" alt="" id="top-logo"></a></div>
-                <div id="header-3"><a href="login.jsp"><input type="button" value="로그인" id="toplog-btn"></a></div>
+                <div id="header-3"><a href="login.do"><input type="button" value="로그인" id="toplog-btn"></a></div>
             </header>
             <div id="nav">
                 <ul id="top-ul">
@@ -34,7 +34,7 @@
                             <ul>
                                 <li>
                                     <label for="user-id">아이디</label>
-                                    <input type="text" id="user-id" name="user-id" value="">
+                                    <input type="text" id="user-id" name="user-id" value="${user.userId }">
                                     <input type="button" id="change" value="변경">
                                 </li>
                                 <li>

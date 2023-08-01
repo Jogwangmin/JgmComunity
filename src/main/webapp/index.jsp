@@ -17,15 +17,15 @@
 						id="top-logo"></a>
 				</div>
 				<div id="header-3">
-					<a href="./user/login.jsp"><input type="button" value="로그인"
+					<a href="./user/login.do"><input type="button" value="로그인"
 						id="toplog-btn"></a>	
 				</div>
 			</header>
 			<div id="nav">
 				<ul id="top-ul">
-					<li id="top-li"><a href="/user/mypage.jsp">마이페이지</a></li>
-					<li id="top-li"><a href="/board/board.jsp">게시판</a></li>
-					<li id="top-li"><a href="/board/eventPage.jsp">이벤트</a></li>
+					<li id="top-li"><a href="./user/mypage.do">마이페이지</a></li>
+					<li id="top-li"><a href="./board/board.do">게시판</a></li>
+					<li id="top-li"><a href="./board/eventPage.do">이벤트</a></li>
 					<li id="top-li"><a href="#">상점</a></li>
 				</ul>
 			</div>

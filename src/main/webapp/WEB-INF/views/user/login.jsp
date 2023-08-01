@@ -4,42 +4,42 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>게시판</title>
+	<title>login</title>
         <link rel="stylesheet" href="../resources/css/topFoot.css">
-        <link rel="stylesheet" href="../resources/css/boardView.css">
-    </head>    
+        <link rel="stylesheet" href="../resources/css/login.css">
+    </head>     
     <body>
         <div id="container">
             <header id="header">
                 <div id="header-1"></div>
                 <div id="header-2"><a href="../index.jsp"><img src="../resources/images/logo.PNG" alt="" id="top-logo"></a></div>
-                <div id="header-3"><a href="../user/login.jsp"><input type="button" value="로그인" id="toplog-btn"></a></div>
+                <div id="header-3"><a href="login.do"><input type="button" value="로그인" id="toplog-btn"></a></div>
             </header>
             <div id="nav">
                 <ul id="top-ul">
-                    <li id="top-li"><a href="../user/mypage.jsp">마이페이지</a></li>
-                    <li id="top-li"><a href="board.jsp">게시판</a></li>
-                    <li id="top-li"><a href="eventPage.jsp">이벤트</a></li>
+                    <li id="top-li"><a href="/user/mypage.jsp">마이페이지</a></li>
+                    <li id="top-li"><a href="../board/board.jsp">게시판</a></li>
+                    <li id="top-li"><a href="../board/eventPage.jsp">이벤트</a></li>
                     <li id="top-li"><a href="#">상점</a></li>
                 </ul>
             </div>
-            <main>
-                <div id="main-top">
-                    <div id="top-left">
-                        <h3>(자유)우리집 생후 3개월 아기고양이입니다</h3>
-                        <ul>
-                            <li>추천수 10</li>
-                            <li>댓글 0</li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="main-mid">
-                    <h3>우리집 고양이입니다.</h3>
-                    <img src="../resources/images/cat1.jpg" alt="cat" id="cat">
-                </div>
-                <div id="main-bottom">
-                    <input type="text" value="내용을 입력해주세요.">
-                    <input type="button" value="등록">
+            <main id="main">
+                <div class="login-form">
+	               	<form action="/user/login.do" method="post">
+		       		 	<div id="log-top">
+			                <label for="id-input" id="user-id" >아이디</label>
+			                <input type="text" id="id-input" name="user-id" required>
+			                <label for="pw-input" id="user-pw" >비밀번호</label>
+			                <input type="password" id="pw-input"  name="user-pw"required>
+		               	</div>
+		               	<div id="log-bottom">
+			                <input type="submit" value="로그인" id="log-btn" >
+		           	 	</div>
+		           	 	<div class="sign">
+			                <a href="/user/register.do" id="sign">회원가입</a>
+			                <a href="findIdPw.jsp" id="pwfind">ID/PW찾기</a>
+		               	</div>
+	                </form>
                 </div>
             </main>
             <footer>

@@ -3,17 +3,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>게시글</title>
-		<link rel="stylesheet" href="../resources/css/topFoot.css">
+	<meta charset="UTF-8">
+	<title>게시판</title>
+        <link rel="stylesheet" href="../resources/css/topFoot.css">
         <link rel="stylesheet" href="../resources/css/boardView.css">
-	</head>
-	<body>
-		<div id="container">
+    </head>    
+    <body>
+        <div id="container">
             <header id="header">
                 <div id="header-1"></div>
                 <div id="header-2"><a href="../index.jsp"><img src="../resources/images/logo.PNG" alt="" id="top-logo"></a></div>
-                <div id="header-3"><a href="../user/login.jsp"><input type="button" value="로그인" id="toplog-btn"></a></div>
+                <div id="header-3"><a href="../user/login.do"><input type="button" value="로그인" id="toplog-btn"></a></div>
             </header>
             <div id="nav">
                 <ul id="top-ul">
@@ -26,16 +26,16 @@
             <main>
                 <div id="main-top">
                     <div id="top-left">
-                        <h3>(자유)댕댕이</h3>
+                        <h3>(자유)우리집 생후 3개월 아기고양이입니다</h3>
                         <ul>
-                            <li>추천수 111</li>
+                            <li>추천수 10</li>
                             <li>댓글 0</li>
                         </ul>
                     </div>
                 </div>
                 <div id="main-mid">
-                    <h3>댕댕이는 옳습니다</h3>
-                    <img src="../resources/images/dog1.jpg" alt="cat" id="cat">
+                    <h3>우리집 고양이입니다.</h3>
+                    <img src="../resources/images/cat1.jpg" alt="cat" id="cat">
                 </div>
                 <div id="main-bottom">
                     <input type="text" value="내용을 입력해주세요.">
@@ -56,5 +56,5 @@
                 </div>                    
             </footer>
         </div>
-	</body>
+    </body>
 </html>
