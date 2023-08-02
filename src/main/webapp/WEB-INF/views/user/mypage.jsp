@@ -3,25 +3,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
- 	<title>mypage</title>
+ 	<title>마이페이지</title>
         <link rel="stylesheet" href="../resources/css/topFoot.css">
         <link rel="stylesheet" href="../resources/css/mypage.css">
     </head>     
     <body>
         <div id="container">
-            <header id="header">
-                <div id="header-1"></div>
-                <div id="header-2"><a href="../index.jsp"><img src="../resources/images/logo.PNG" alt="" id="top-logo"></a></div>
-                <div id="header-3"><a href="login.do"><input type="button" value="로그인" id="toplog-btn"></a></div>
-            </header>
-            <div id="nav">
-                <ul id="top-ul">
-                    <li id="top-li"><a href="mypage.jsp">마이페이지</a></li>
-                    <li id="top-li"><a href="../board/board.jsp">게시판</a></li>
-                    <li id="top-li"><a href="../board/eventPage.jsp">이벤트</a></li>
-                    <li id="top-li"><a href="#">상점</a></li>
-                </ul>
-            </div>
+            <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/include/nav.jsp"></jsp:include>
             <main id="main">
                 <div id="profile">
                     <div id="follower-count"><p>팔로워 : <strong>100명</strong> 팔로잉 : <strong>3명</strong></p></div>
@@ -31,7 +20,7 @@
                     </div>
                     <div id="profile-option">
                         <ul id="option">
-                            <li><a href="updateInfo.jsp">정보수정</a></li>
+                            <li><a href="/user/updateInfo.do">정보수정</a></li>
                             <li><a href="posts.jsp">내가 쓴 글</a></li>
                             <li><a href="follow.jsp">즐겨찾기</a></li>
                         </ul>

@@ -10,19 +10,8 @@
     </head>    
     <body>
         <div id="container">
-            <header id="header">
-                <div id="header-1"></div>
-                <div id="header-2"><a href="../index.jsp"><img src="../resources/images/logo.PNG" alt="" id="top-logo"></a></div>
-                <div id="header-3"><a href="../user/login.do"><input type="button" value="로그인" id="toplog-btn"></a></div>
-            </header>
-            <div id="nav">
-                <ul id="top-ul">
-                    <li id="top-li"><a href="../user/mypage.jsp">마이페이지</a></li>
-                    <li id="top-li"><a href="board.jsp">게시판</a></li>
-                    <li id="top-li"><a href="eventPage.jsp">이벤트</a></li>
-                    <li id="top-li"><a href="#">상점</a></li>
-                </ul>
-            </div>
+            <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/include/nav.jsp"></jsp:include>
             <main>
                 <div id="top">
                     <h1>이번달 이벤트 상품</h1>

@@ -10,19 +10,8 @@
     </head>     
     <body>
         <div id="container">
-            <header id="header">
-                <div id="header-1"></div>
-                <div id="header-2"><a href="../index.jsp"><img src="../resources/images/logo.PNG" alt="" id="top-logo"></a></div>
-                <div id="header-3"><a href="login.do"><input type="button" value="로그인" id="toplog-btn"></a></div>
-            </header>
-            <div id="nav">
-                <ul id="top-ul">
-                    <li id="top-li"><a href="./mypage.jsp">마이페이지</a></li>
-                    <li id="top-li"><a href="../board/board.jsp">게시판</a></li>
-                    <li id="top-li"><a href="../board/eventPage.jsp">이벤트</a></li>
-                    <li id="top-li"><a href="#">상점</a></li>
-                </ul>
-            </div>
+            <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/include/nav.jsp"></jsp:include>
             <main id="main">
                 <div id="profile">
                     <div id="profile-info">
@@ -30,7 +19,7 @@
                         <div id="profile-name"><input type="button" value="변경" id="profile-change"></div>
                     </div>
                     <div id="Modification">
-                        <form action="/user/update.do" method="post">
+                        <form action="/user/updateInfo.do" method="post">
                             <ul>
                                 <li>
                                     <label for="user-id">아이디</label>
@@ -44,7 +33,7 @@
                                 </li>
                                 <li>
                                     <label for="user-name">닉네임</label>
-                                    <input type="text" id="user-name" name="user-name" value="">
+                                    <input type="text" id="user-name" name="user-name" value="${user.userName }">
                                     <input type="button" id="change" value="변경">
                                 </li>
                                 <li>

@@ -34,4 +34,21 @@ public class UserService {
 		jdbcTemplate.close(conn);
 		return uOne;
 	}
+
+	public int updateUser(User user) {
+		Connection conn = jdbcTemplate.createConnection();
+		// DAO 호출
+		int result = uDao.updateMember(conn, user);
+		// 커밋/롤백
+		if (result > 0) {
+			// 성공 - 커밋
+			jdbcTemplate.commit(conn);
+		} else {
+			// 실패 - 롤백
+			jdbcTemplate.rollback(conn);
+		}
+		jdbcTemplate.close(conn);
+		return result;
+	}
+
 }

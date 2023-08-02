@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,25 +11,8 @@
 	</head>
 	<body>
 		<div id="container">
-			<header id="header">
-				<div id="header-1"></div>
-				<div id="header-2">
-					<a href="#"><img src="./resources/images/logo.PNG" alt=""
-						id="top-logo"></a>
-				</div>
-				<div id="header-3">
-					<a href="./user/login.do"><input type="button" value="로그인"
-						id="toplog-btn"></a>	
-				</div>
-			</header>
-			<div id="nav">
-				<ul id="top-ul">
-					<li id="top-li"><a href="./user/mypage.do">마이페이지</a></li>
-					<li id="top-li"><a href="./board/board.do">게시판</a></li>
-					<li id="top-li"><a href="./board/eventPage.do">이벤트</a></li>
-					<li id="top-li"><a href="#">상점</a></li>
-				</ul>
-			</div>
+			<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/include/nav.jsp"></jsp:include>
 			<main>
 				<div id="main">
 					<h1>인기쟁이들</h1>

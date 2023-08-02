@@ -1,16 +1,20 @@
 package user.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import user.model.service.UserService;
+import user.model.vo.User;
+
 /**
  * Servlet implementation class UpdateServlet
  */
-@WebServlet("/user/update.do")
+@WebServlet("/user/updateInfo.do")
 public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,7 +38,22 @@ public class UpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		String userId = requets.getPara
+		String userId = request.getParameter("user-id");
+		String userPw = request.getParameter("user-pw");
+		String userName = request.getParameter("user-name");
+		int userAge = Integer.parseInt(request.getParameter("user-age"));
+		String userEmail = request.getParameter("user-email");
+		String userPhone = request.getParameter("user-phone");
+		String userAddress = request.getParameter("user-address");
+		UserService service = new UserService();
+		User user = new User(userId, userPw, userName, userAge, userEmail, userPhone, userAddress);
+		int result = service.updateUser(user);
+		if(result > 0) {
+			response.sendRedirect("/user/mypage.do");
+		}else {
+			request.setAttribute("msg", "회원 수정이 완료되지 않았습니다");
+			request.getRequestDispatcher("/user/serviceFailed.jsp").forward(request, response);
+		}
 	}
 
 }

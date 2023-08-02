@@ -35,7 +35,33 @@ public class UserDAO {
 	    }
 	    return result;
 	}
-
+	
+	public int updateMember(Connection conn, User user) {
+		PreparedStatement pstmt = null;
+	    String query = "UPDATE USER_TBL SET USER_PW = ?, USER_NAME = ?, USER_EMAIL = ?, USER_PHONE = ?, USER_ADDRESS = ? WHERE USER_ID = ?";
+	    int result = 0;
+	    try {
+	        pstmt = conn.prepareStatement(query);
+	        pstmt.setString(1, user.getUserPw());
+	        pstmt.setString(2, user.getUserName());
+	        pstmt.setString(3, user.getUserEmail());
+	        pstmt.setString(4, user.getUserPhone());
+	        pstmt.setString(5, user.getUserAddress());
+	        pstmt.setString(6, user.getUserId());
+	        result = pstmt.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	    	try {
+				pstmt.close();
+				conn.close();
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    return result;
+	}
+	
 	public User selectCheckLogin(Connection conn, User user) {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -74,5 +100,7 @@ public class UserDAO {
 		user.setUserAddress(rset.getString("USER_ADDRESS"));
 		return user;
 	}
+
+
 
 }
