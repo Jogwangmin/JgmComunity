@@ -19,16 +19,16 @@
                         <div id="profile-name"><input type="button" value="변경" id="profile-change"></div>
                     </div>
                     <div id="Modification">
-                        <form action="/user/updateInfo.do" method="post">
+                        <form action="/user/update.do" method="post">
                             <ul>
                                 <li>
                                     <label for="user-id">아이디</label>
-                                    <input type="text" id="user-id" name="user-id" value="${user.userId }">
+                                    <input type="text" id="user-id" name="user-id" value="${user.userId }" readonly>
                                     <input type="button" id="change" value="변경">
                                 </li>
                                 <li>
                                     <label for="user-pw">비밀번호</label>
-                                    <input type="password" id="user-pw" name="user-pw">
+                                    <input type="password" id="user-pw" name="user-pw" value="${user.userPw }">
                                     <input type="button" id="change" value="확인">
                                 </li>
                                 <li>
@@ -37,25 +37,25 @@
                                     <input type="button" id="change" value="변경">
                                 </li>
                                 <li>
-                                    <label for="age">나이</label>
-                                    <input type="text" id="age">   
+                                    <label for="user-age">나이</label>
+                                    <input type="text" id="user-age" name="user-age" value="${user.userAge }" readonly>   
                                     <input type="button" id="change" value="변경">
                                 </li>
                                 
                                 <li>
-                                    <label for="email">이메일</label>
-                                    <input type="email" id="email">
+                                    <label for="user-email">이메일</label>
+                                    <input type="email" id="user-email" name="user-email" value="${user.userEmail }">
                                     <input type="button" id="change" value="변경">
                                 </li>
                                 <li>
-                                    <label for="phone">전화번호</label>
-                                    <input type="text" id="phone">
+                                    <label for="user-phone">전화번호</label>
+                                    <input type="text" id="user-phone" name="user-phone" value="${user.userPhone }">
                                     <input type="button" id="change" value="변경">
                                 </li>
                                 <li>
-                                    <label for="addr">주소</label>
-                                    <input type="text" id="addr">
-                                    <input type="button" id="change" value="주소찾기">
+                                    <label for="user-address">주소</label>
+                                    <input type="text" id="user-address" name="user-address" value="${user.userAddress }">
+                                    <input type="button" id="change" value="변경">
                                 </li>
                             </ul>
                             <div id="sumbitBtn">

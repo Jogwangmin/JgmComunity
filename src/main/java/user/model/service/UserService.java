@@ -51,4 +51,10 @@ public class UserService {
 		return result;
 	}
 
+	public User selectOneById(String userId) {
+		Connection conn = jdbcTemplate.createConnection();
+		User user = uDao.selectOneById(conn, userId);
+		return user;
+	}
+
 }

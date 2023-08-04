@@ -1,7 +1,6 @@
 package user.controller;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,16 +11,16 @@ import user.model.service.UserService;
 import user.model.vo.User;
 
 /**
- * Servlet implementation class UpdateServlet
+ * Servlet implementation class UpdateController
  */
-@WebServlet("/user/updateInfo.do")
-public class UpdateServlet extends HttpServlet {
+@WebServlet("/user/update.do")
+public class UpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateServlet() {
+    public UpdateController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,6 +37,7 @@ public class UpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8"); // 한글 안깨지게
 		String userId = request.getParameter("user-id");
 		String userPw = request.getParameter("user-pw");
 		String userName = request.getParameter("user-name");
@@ -51,8 +51,8 @@ public class UpdateServlet extends HttpServlet {
 		if(result > 0) {
 			response.sendRedirect("/user/mypage.do");
 		}else {
-			request.setAttribute("msg", "회원 수정이 완료되지 않았습니다");
-			request.getRequestDispatcher("/user/serviceFailed.jsp").forward(request, response);
+			request.setAttribute("msg", "정보 수정이 완료되지 않았습니다.");
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
 		}
 	}
 
