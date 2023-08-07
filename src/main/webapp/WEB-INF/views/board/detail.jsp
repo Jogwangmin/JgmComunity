@@ -15,15 +15,15 @@
             <main>
                 <div id="main-top">
                     <div id="top-left">
-                        <h3>(자유)우리집 생후 3개월 아기고양이입니다</h3>
+                        <h3>${board.boardSubject }</h3>
                         <ul>
-                            <li>추천수 10</li>
+                            <li>추천수 ${board.likeCount }</li>
                             <li>댓글 0</li>
                         </ul>
                     </div>
                 </div>
                 <div id="main-mid">
-                    <h3>우리집 고양이입니다.</h3>
+                    <h3>${board.boardContent }</h3>
                     <img src="../resources/images/cat1.jpg" alt="cat" id="cat">
                 </div>
                 <div id="main-bottom">
