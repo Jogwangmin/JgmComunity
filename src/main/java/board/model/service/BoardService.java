@@ -30,6 +30,18 @@ public class BoardService {
 		return result;
 	}
 
+	public int deleteBoardByNo(int boardNo) {
+		Connection conn = jdbcTemplate.createConnection();
+		int result = bDao.deleteBoardByNo(conn, boardNo);
+		if(result > 0) {
+			jdbcTemplate.commit(conn);
+		}else {
+			jdbcTemplate.rollback(conn);
+		}
+		jdbcTemplate.close(conn);
+		return result;
+	}
+	
 	public PageData selectBoardList(int currentPage) {
 		Connection conn = jdbcTemplate.createConnection();
 		List<Board> bList = bDao.selectBoardList(conn, currentPage);

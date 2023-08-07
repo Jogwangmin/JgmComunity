@@ -33,6 +33,27 @@ public class BoardDAO {
 		
 		return result;
 	}
+	
+	public int deleteBoardByNo(Connection conn, int boardNo) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String query = "DELETE FROM BOARD_TBL WHERE BOARD_NO = ?";
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, boardNo);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
 
 	public List<Board> selectBoardList(Connection conn, int currentPage) {
 		PreparedStatement pstmt = null;
